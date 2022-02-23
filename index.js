@@ -1,5 +1,6 @@
 // console.log('hello')
 let message = document.querySelector('#message')
+let addBtn = document.querySelector('button')
 let addMovie = event => {
     event.preventDefault()
     let inputfield = document.querySelector('input').value
@@ -12,11 +13,15 @@ let addMovie = event => {
     deleteBtn.textContent = "x"
     deleteBtn.addEventListener('click', deleteMovie)
     movie.appendChild(deleteBtn)
-    let list = document.querySelector('ul')
-    list.appendChild(movie)
+    document.querySelector('ul').appendChild(movie)
+    // let list = document.querySelector('ul')
+    // list.appendChild(movie)
     inputfield = ""
-    message.textContent = 'Movie added!'
+    message.textContent = 'Movie added!';
 
+}
+let clearInput = () => {
+    
 }
 
 let deleteMovie = event => {
@@ -34,4 +39,5 @@ let crossOffMovie = event => {
     }
 }
 let form = document.querySelector('form')
-form.addEventListener('click', addMovie)
+form.addEventListener('submit', addMovie)
+addBtn.addEventListener('click', addMovie)
