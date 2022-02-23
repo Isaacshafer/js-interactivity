@@ -1,5 +1,5 @@
 // console.log('hello')
-
+let message = document.querySelector('#message')
 let addMovie = event => {
     event.preventDefault()
     let inputfield = document.querySelector('input').value
@@ -15,14 +15,23 @@ let addMovie = event => {
     let list = document.querySelector('ul')
     list.appendChild(movie)
     inputfield = ""
+    message.textContent = 'Movie added!'
+
 }
 
 let deleteMovie = event => {
     event.target.parentNode.remove()
+    message.textContent = "Movie deleted!"
+
 }
 
 let crossOffMovie = event => {
     event.target.classList.toggle('checked')
+    if(event.target.classList.contains('checked') === true){
+    message.textContent = 'Watched!'
+    } else {
+        message.textContent = 'Movie added back'
+    }
 }
 let form = document.querySelector('form')
 form.addEventListener('click', addMovie)
