@@ -1,8 +1,7 @@
-// console.log('hello')
 let message = document.querySelector('#message')
 let addBtn = document.querySelector('button')
 let addMovie = event => {
-    aside.classList.remove('hide')
+    message.classList.remove('hide')
     event.preventDefault()
     let inputfield = document.querySelector('input')
     let movie = document.createElement('li')
@@ -22,7 +21,7 @@ let addMovie = event => {
 
 
 let deleteMovie = event => {
-    aside.classList.remove('hide')
+    message.classList.remove('hide')
     event.target.parentNode.remove()
     let MOVIE = event.target.parentNode.childNodes[0].textContent
     message.textContent = `${MOVIE} deleted!`
@@ -30,7 +29,7 @@ let deleteMovie = event => {
 }
 
 let crossOffMovie = event => {
-    aside.classList.remove('hide')
+    message.classList.remove('hide')
     event.target.classList.toggle('checked')
     let MOVIE = event.target.textContent
     if(event.target.classList.contains('checked') === true){
@@ -44,12 +43,10 @@ let form = document.querySelector('form')
 form.addEventListener('submit', addMovie)
 addBtn.addEventListener('click', addMovie)
 
-let aside = document.querySelector('aside')
 
 let hideMessage = () => {
    
-    aside.classList.add('hide')
-    console.log(aside)
+    message.classList.add('hide')
 }
 
 let revealMessage = () => {
